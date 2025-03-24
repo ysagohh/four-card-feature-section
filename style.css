@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: var(--white);
+    background-color: hsl(0, 0%, 97%);
 }
 
 .wrapper {
