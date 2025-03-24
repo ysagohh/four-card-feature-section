@@ -1,0 +1,171 @@
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --grey-500: hsl(234, 12%, 34%);
+    --grey-400: hsl(212, 6%, 44%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin: 6em auto 5em;
+    width: min(35em, 90%);
+}
+
+header h1 > * {
+    display: block;
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        ". team-builder ."
+        "supervisor team-builder calculator"
+        "supervisor karma calculator"
+        ". karma ."
+    ;
+    gap: 2em;
+    margin: 3em auto;
+    width: min(70em, 90%);
+}
+
+.supervisor {
+    grid-area: supervisor;
+}
+
+.team-builder {
+    grid-area: team-builder;
+}
+
+.karma {
+    grid-area: karma;
+}
+
+.calculator {
+    grid-area: calculator;
+}
+
+footer {
+    margin: auto 0.5em 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    color: var(--grey-400);
+    font-size: 0.85em;
+}
+
+/* Styling */
+p,
+h1,
+h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--grey-500);
+}
+
+h1 {
+    font-size: 2.3em;
+}
+
+.thin {
+    font-weight: 200;
+}
+
+.bold,
+h2 {
+    font-weight: 600;
+}
+
+.sub-header {
+    margin-top: 1.1em;
+    color: var(--grey-400);
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+.description {
+    color: var(--grey-400);
+    font-size: 0.85em;
+    margin-top: 0.5em;
+}
+
+.box {
+    background-color: var(--white);
+    filter: drop-shadow(0 5px 10px hsl(212, 6%, 80%));
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    min-height: 16em;
+}
+
+.box div {
+    padding: 2em 3em 2em 2em;
+}
+
+.cyan-box div {
+    border-top: 4px solid var(--cyan);
+}
+
+.red-box div {
+    border-top: 4px solid var(--red);
+}
+
+.orange-box div {
+    border-top: 4px solid var(--orange);
+}
+
+.blue-box div {
+    border-top: 4px solid var(--blue);
+}
+
+.box img {
+    position: absolute;
+    bottom: 3em;
+    right: 2em;
+}
+
+footer a {
+    color: var(--blue);
+}
+
+footer a:hover {
+    color: var(--red);
+}
+
+@media only screen and (max-width: 850px) {
+    main {
+        grid-template-areas: 
+            "supervisor"
+            "team-builder"
+            "karma"
+            "calculator"
+        ;
+        width: min(330px, 90%);
+    }
+
+    header {
+        margin: 4em auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
